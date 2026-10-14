@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UNISEX SALON — haircuts, styling and beauty services in Mark Point. Contact us to book an appointment.">
+  <title>UNISEX SALON | Style. Confidence. You.</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #151515;
+      --gold: #d7b46a;
+      --gold-light: #f0d99d;
+      --text: #f7f3ea;
+      --muted: #bcb7ad;
+      --border: rgba(215,180,106,.25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,11,11,.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:16px 0; }
+    .brand { font-size: 1rem; letter-spacing: .16em; font-weight: 800; }
+    .brand span { color: var(--gold); }
+    .nav-links { display:flex; gap:20px; align-items:center; font-size:.9rem; color:var(--muted); }
+    .nav-links a:hover { color: var(--gold-light); }
+    .button {
+      display:inline-flex; align-items:center; justify-content:center;
+      background: var(--gold); color:#17130a; padding:12px 18px;
+      border-radius:3px; font-weight:800; border:1px solid var(--gold);
+      cursor:pointer; transition:transform .2s, background .2s;
+    }
+    .button:hover { transform:translateY(-2px); background:var(--gold-light); }
+    .button.outline { background:transparent; color:var(--gold-light); }
+    .hero {
+      min-height: 590px; display:flex; align-items:center;
+      background:
+        linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.80) 48%, rgba(5,5,5,.35) 100%),
+        url('https://images.unsplash.com/photo- barber-shop?auto=format&fit=crop&w=1800&q=85');
+      background-color:#17130e;
+      background-image:
+        linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.80) 48%, rgba(5,5,5,.45) 100%),
+        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85');
+      background-position:center; background-size:cover;
+      border-bottom:1px solid var(--border);
+    }
+    .hero-content { max-width:680px; padding:88px 0; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.22em; font-size:.78rem; font-weight:800; }
+    h1 { font-family: Georgia, 'Times New Roman', serif; font-size:clamp(2.7rem, 7vw, 5.8rem); line-height:1.02; margin:18px 0; font-weight:500; }
+    h1 span { color:var(--gold); }
+    .hero p { color:#d2cec5; font-size:1.08rem; max-width:540px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .section { padding:76px 0; }
+    .section-head { max-width:650px; margin-bottom:34px; }
+    .section-head h2 { font:500 clamp(2rem,4vw,3.2rem)/1.1 Georgia,serif; margin:8px 0 12px; }
+    .section-head p { color:var(--muted); margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--border); padding:24px; }
+    .card .number { color:var(--gold); font-size:.8rem; letter-spacing:.15em; }
+    .card h3 { margin:10px 0 6px; font-size:1.15rem; }
+    .card p { color:var(--muted); margin:0; font-size:.94rem; }
+    .price { color:var(--gold-light); font-weight:800; margin-top:16px; }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; }
+    .feature-image {
+      min-height:360px; background:
+        linear-gradient(0deg,rgba(0,0,0,.2),rgba(0,0,0,.05)),
+        url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85') center/cover;
+      border:1px solid var(--border);
+    }
+    .checklist { list-style:none; padding:0; margin:22px 0; }
+    .checklist li { margin:10px 0; color:#ded9cf; }
+    .checklist li::before { content:'✦'; color:var(--gold); margin-right:10px; }
+    .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .gallery div { min-height:190px; background:#24211b; border:1px solid var(--border); display:flex; align-items:end; padding:15px; color:#fff; font-weight:700; background-size:cover; background-position:center; }
+    .gallery .g1 { background-image:linear-gradient(0deg,rgba(0,0,0,.7),transparent),url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80'); }
+    .gallery .g2 { background-image:linear-gradient(0deg,rgba(0,0,0,.7),transparent),url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=80'); }
+    .gallery .g3 { background-image:linear-gradient(0deg,rgba(0,0,0,.7),transparent),url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80'); }
+    .booking { background:linear-gradient(135deg,#1d1910,#111); border:1px solid var(--border); padding:36px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .booking h2 { font:500 clamp(1.8rem,4vw,2.8rem)/1.1 Georgia,serif; margin:0 0 10px; }
+    .booking p { color:var(--muted); margin:0; }
+    .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .contact-box { padding:22px; background:var(--panel); border:1px solid var(--border); }
+    .contact-box strong { color:var(--gold); display:block; margin-bottom:8px; }
+    footer { border-top:1px solid var(--border); padding:25px 0; color:var(--muted); font-size:.88rem; }
+    .footer-inner { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .note { color:#a7a095; font-size:.85rem; margin-top:18px; }
+    @media (max-width:760px) {
+      .nav-links { display:none; }
+      .hero { min-height:540px; }
+      .hero-content { padding:68px 0; }
+      .grid, .split, .gallery, .contact-grid { grid-template-columns:1fr; }
+      .gallery div { min-height:240px; }
+      .booking { flex-direction:column; align-items:flex-start; padding:26px; }
+      .section { padding:58px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">UNISEX <span>SALON</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="button" href="#booking">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="eyebrow">Your style. Your statement.</div>
+          <h1>Look sharp.<br><span>Feel confident.</span></h1>
+          <p>Hair, grooming and beauty services for everyone. Discover your next look at UNISEX SALON.</p>
+          <div class="actions">
+            <a class="button" href="#booking">Book an Appointment</a>
+            <a class="button outline" href="#services">Explore Services</a>
+          </div>
+          <p class="note">Demo website: salon details, prices and contact links must be verified before publishing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Care that fits your style.</h2>
+          <p>From everyday grooming to a fresh new look, explore our sample service categories. Replace these with the salon's actual services and prices.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="number">01 / HAIR</div><h3>Haircut & Styling</h3><p>Haircuts and styling tailored to your preferred look.</p><div class="price">Price: Confirm with salon</div></article>
+          <article class="card"><div class="number">02 / GROOMING</div><h3>Beard & Grooming</h3><p>Beard shaping and grooming services for a clean finish.</p><div class="price">Price: Confirm with salon</div></article>
+          <article class="card"><div class="number">03 / CARE</div><h3>Hair Spa & Treatment</h3><p>Hair-care services selected to suit your needs.</p><div class="price">Price: Confirm with salon</div></article>
+          <article class="card"><div class="number">04 / BEAUTY</div><h3>Facial & Skin Care</h3><p>Beauty and skin-care services for a refreshed look.</p><div class="price">Price: Confirm with salon</div></article>
+          <article class="card"><div class="number">05 / COLOUR</div><h3>Hair Colour</h3><p>Colour services and touch-ups, subject to salon availability.</p><div class="price">Price: Confirm with salon</div></article>
+          <article class="card"><div class="number">06 / OCCASION</div><h3>Event Styling</h3><p>Styling for celebrations and special occasions.</p><div class="price">Price: Confirm with salon</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap split">
+        <div class="feature-image" role="img" aria-label="Salon interior sample photo"></div>
+        <div>
+          <div class="eyebrow">About the salon</div>
+          <h2 style="font:500 clamp(2rem,4vw,3.2rem)/1.1 Georgia,serif;">A fresh look starts here.</h2>
+          <p style="color:var(--muted);">UNISEX SALON is presented here as a demo concept for a welcoming salon experience for men and women. Add the owner's real story, experience and service details before this page goes live.</p>
+          <ul class="checklist">
+            <li>Services for men and women</li>
+            <li>Appointments by WhatsApp</li>
+            <li>Easy-to-find contact and location details</li>
+          </ul>
+          <a class="button outline" href="#contact">Contact the Salon</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Style inspiration</div>
+          <h2>Gallery</h2>
+          <p>These are temporary sample images. Replace them with photos taken at the salon, with the owner's permission, before publishing.</p>
+        </div>
+        <div class="gallery">
+          <div class="g1">Grooming inspiration</div>
+          <div class="g2">Hair styling inspiration</div>
+          <div class="g3">Salon experience</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="booking">
+      <div class="wrap">
+        <div class="booking">
+          <div><div class="eyebrow">Ready for your next look?</div><h2>Book your appointment.</h2><p>Message the salon on WhatsApp to ask about available times and service prices.</p></div>
+          <a class="button" id="whatsapp-booking" href="#" target="_blank" rel="noopener">Book on WhatsApp ↗</a>
+        </div>
+        <p class="note">Setup needed: add the salon's WhatsApp number in the JavaScript at the bottom of this file. Use country code 91 for an Indian number, without the + sign or spaces.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Find us</div>
+          <h2>Visit UNISEX SALON.</h2>
+          <p>Location currently says Mark Point only. Add the exact public business address and verified opening hours before publishing.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-box"><strong>LOCATION</strong><span>Mark Point — exact address to be added</span></div>
+          <div class="contact-box"><strong>OPENING HOURS</strong><span>Confirm days and timings with the owner</span></div>
+          <div class="contact-box"><strong>CONTACT</strong><span>WhatsApp booking link to be configured</span></div>
+        </div>
+        <p class="note">Add the real Google Maps link after confirming the salon's exact map listing. Do not publish invented details.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> UNISEX SALON</span>
+      <span>Style. Confidence. You.</span>
+    </div>
+  </footer>
+
+  <script>
+    // SETUP BEFORE PUBLISHING:
+    // Replace this with the salon owner's WhatsApp number, e.g. 919876543210.
+    // Keep only digits; include India's country code 91.
+    const salonWhatsAppNumber = "REPLACE_WITH_NUMBER";
+    const bookingMessage = encodeURIComponent("Hello UNISEX SALON, I would like to ask about services and book an appointment.");
+    const bookingButton = document.getElementById("whatsapp-booking");
+
+    if (/^\d{10,15}$/.test(salonWhatsAppNumber)) {
+      bookingButton.href = `https://wa.me/${salonWhatsAppNumber}?text=${bookingMessage}`;
+    } else {
+      bookingButton.href = "https://wa.me/";
+      bookingButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        alert("Demo only: add the salon's verified WhatsApp number in the JavaScript before publishing.");
+      });
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
